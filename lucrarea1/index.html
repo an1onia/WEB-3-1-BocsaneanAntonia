@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculator matematic avansat</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <section class="calc" id="calc" role="application" aria-label="Scientific calculator">
+
+    <header class="calc-header">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">CMA</span>
+      </div>
+      <div class="header-controls">
+        <button class="chip" id="angleModeBtn" type="button" aria-label="Toggle angle mode" title="Toggle DEG / RAD">DEG</button>
+        <button class="chip" id="historyToggleBtn" type="button" aria-label="Toggle calculation history" title="History" aria-expanded="false" aria-controls="historyPanel">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </button>
+        <button class="theme-switch" id="themeToggleBtn" type="button" role="switch" aria-checked="true" aria-label="Toggle light and dark theme" title="Toggle theme">
+          <span class="theme-switch-track">
+            <span class="theme-switch-thumb"></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===== Display ===== -->
+    <section class="display-panel" aria-live="polite">
+      <div class="display-indicators">
+        <span class="indicator" id="memIndicator" data-active="false">M</span>
+        <span class="indicator" id="angleIndicator">DEG</span>
+        <span class="indicator error-indicator" id="errorIndicator" data-active="false" role="alert"></span>
+      </div>
+
+      <div class="expression-wrap" id="expressionWrap" tabindex="0" aria-label="Current expression">
+        <div class="expression" id="expressionDisplay">&nbsp;</div>
+      </div>
+
+      <div class="result-wrap">
+        <div class="result" id="resultDisplay">0</div>
+      </div>
+    </section>
+
+    <!-- ===== Scientific function grid ===== -->
+    <section class="btn-grid sci-grid" aria-label="Scientific functions">
+      <button class="btn btn-sci" data-insert-fn="sin">sin</button>
+      <button class="btn btn-sci" data-insert-fn="cos">cos</button>
+      <button class="btn btn-sci" data-insert-fn="tan">tan</button>
+      <button class="btn btn-sci" data-insert-fn="asin">sin⁻¹</button>
+      <button class="btn btn-sci" data-insert-fn="acos">cos⁻¹</button>
+      <button class="btn btn-sci" data-insert-fn="atan">tan⁻¹</button>
+
+      <button class="btn btn-sci" data-insert-fn="sinh">sinh</button>
+      <button class="btn btn-sci" data-insert-fn="cosh">cosh</button>
+      <button class="btn btn-sci" data-insert-fn="tanh">tanh</button>
+      <button class="btn btn-sci" data-insert-fn="ln">ln</button>
+      <button class="btn btn-sci" data-insert-fn="log">log</button>
+      <button class="btn btn-sci" data-insert-fn="log2">log₂</button>
+
+      <button class="btn btn-sci" data-action="square">x²</button>
+      <button class="btn btn-sci" data-action="cube">x³</button>
+      <button class="btn btn-sci" data-op="^">xʸ</button>
+      <button class="btn btn-sci" data-insert-fn="sqrt">√x</button>
+      <button class="btn btn-sci" data-insert-fn="cbrt">∛x</button>
+      <button class="btn btn-sci" data-action="nthroot">ⁿ√x</button>
+
+      <button class="btn btn-sci" data-action="reciprocal">1/x</button>
+      <button class="btn btn-sci" data-action="abs">|x|</button>
+      <button class="btn btn-sci" data-action="factorial">x!</button>
+      <button class="btn btn-sci" data-insert-fn="exp">eˣ</button>
+      <button class="btn btn-sci" data-action="pow10">10ˣ</button>
+      <button class="btn btn-sci" data-insert=" mod ">mod</button>
+
+      <button class="btn btn-sci" data-const="pi">π</button>
+      <button class="btn btn-sci" data-const="e">e</button>
+      <button class="btn btn-sci" data-const="Infinity">∞</button>
+      <button class="btn btn-sci" data-action="rand">rand</button>
+      <button class="btn btn-sci" data-action="ans">ANS</button>
+      <button class="btn btn-sci" data-action="negate">±</button>
+    </section>
+
+    <!-- ===== Main pad: numbers + operators ===== -->
+    <section class="btn-grid main-grid" aria-label="Number pad and operators">
+      <button class="btn btn-op" data-action="all-clear">AC</button>
+      <button class="btn btn-op" data-action="backspace" aria-label="Backspace">⌫</button>
+      <button class="btn btn-op" data-insert="(">(</button>
+      <button class="btn btn-op" data-insert=")">)</button>
+      <button class="btn btn-op btn-accent" data-op="/">÷</button>
+
+      <button class="btn btn-num" data-num="7">7</button>
+      <button class="btn btn-num" data-num="8">8</button>
+      <button class="btn btn-num" data-num="9">9</button>
+      <button class="btn btn-op" data-action="round-group">round</button>
+      <button class="btn btn-op btn-accent" data-op="*">×</button>
+
+      <button class="btn btn-num" data-num="4">4</button>
+      <button class="btn btn-num" data-num="5">5</button>
+      <button class="btn btn-num" data-num="6">6</button>
+      <button class="btn btn-op" data-action="floor">⌊x⌋</button>
+      <button class="btn btn-op btn-accent" data-op="-">−</button>
+
+      <button class="btn btn-num" data-num="1">1</button>
+      <button class="btn btn-num" data-num="2">2</button>
+      <button class="btn btn-num" data-num="3">3</button>
+      <button class="btn btn-op" data-action="ceil">⌈x⌉</button>
+      <button class="btn btn-op btn-accent" data-op="+">+</button>
+
+      <button class="btn btn-num btn-zero" data-num="0">0</button>
+      <button class="btn btn-num" data-num=".">.</button>
+      <button class="btn btn-op" data-op="%">%</button>
+      <button class="btn btn-op btn-equals" data-action="evaluate">=</button>
+    </section>
+
+  </section>
+
+  <!-- ===== History Panel ===== -->
+  <aside class="history-panel" id="historyPanel" aria-label="Calculation history" aria-hidden="true">
+    <div class="history-header">
+      <h2>History</h2>
+      <button class="chip" id="clearHistoryBtn" type="button">Clear</button>
+    </div>
+    <ol class="history-list" id="historyList"></ol>
+    <p class="history-empty" id="historyEmpty">No calculations yet.</p>
+  </aside>
+</div>
+
+<div class="sr-only" id="liveRegion" aria-live="assertive"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
