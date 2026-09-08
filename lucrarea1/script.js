@@ -1,16 +1,4 @@
-/* =========================================================================
-   Praxis Scientific Calculator — script.js
-   Sections:
-     1. State
-     2. DOM references
-     3. Math engine (tokenizer -> shunting-yard -> RPN evaluator)
-     4. Display rendering
-     5. Input handling (buttons + keyboard)
-     6. Memory
-     7. History (localStorage)
-     8. Theme + angle mode persistence
-     9. Init
-   ========================================================================= */
+
 
 (() => {
   "use strict";
