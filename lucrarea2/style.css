@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: #3d0216;
+    padding: 0;
+}
+
+#meniu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+#meniu .logo {
+    color: white;
+    font-size: 30px;
+    margin: 0;
+}
+
+#meniu nav a {
+    color: rgb(255, 247, 247);
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+#sarcina {
+    padding: 7px;
+}
+
+.tara {
+    margin-bottom: 30px;
+}
+
+.tara p {
+    max-width: 700px;
+}
+
+.steag {
+    border-collapse: collapse;
+    margin: 15px;
+}
+
+.steag td {
+    width: 30px;
+    height: 20px;
+    padding: 0;
+}
+
+.moldova-albastru { 
+    background-color: #003289; 
+}
+
+.moldova-galben {
+    background-color: #ffee00;
+    vertical-align: middle;
+}
+
+.moldova-galben img {
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+.moldova-rosu { 
+    background-color: #b40318; 
+}
+
+.steag-norvegia {
+    border-collapse: collapse;
+    margin: 15px;
+}
+
+.steag-norvegia td {
+    width: 27px;
+    height: 20px;
+    padding: 0;
+}
+
+.norvegia-rosu     { 
+    background-color: #b10326; 
+}
+
+.norvegia-alb      { 
+    background-color: #ffffff; 
+}
+
+.norvegia-albastru { 
+    background-color: #00205B; 
+}
+
+.steag-suedia {
+    border-collapse: collapse;
+    margin: 15px;
+}
+
+.steag-suedia td {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+.suedia-albastru { 
+    background-color: #045698; 
+}
+.suedia-galben { 
+    background-color: #FECC02; 
+}
+
+#footer {
+    background-color: #fa4480;
+    color: rgb(12, 1, 1);
+    text-align: right;
+    padding: 20px;
+}
