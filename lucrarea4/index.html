@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laborator 4 - Liste</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <h2>Lista de cumpărături</h2>
+    <input type="text" id="prodInput" placeholder="Produs">
+    <button onclick="adaugaSfarsit()">Adaugă la sfârșit</button>
+    <button onclick="adaugaInceput()">Adaugă la început</button>
+    <button onclick="stergeInceput()">Șterge primul</button>
+    <button onclick="stergeSfarsit()">Șterge ultimul</button>
+    <p id="zonaProd"></p>
+  </div>
+
+  <div class="card">
+    <h2>Catalog electronic</h2>
+    <p id="numarElevilor"></p>
+    <p id="zonaCatalog"></p>
+  </div>
+
+  <div class="card">
+    <h3>Adaugă elev</h3>
+    <input type="text" id="nume" placeholder="Nume">
+    <input type="number" id="varsta" placeholder="Vârsta">
+    <input type="number" id="nota" placeholder="Nota">
+    <button onclick="adaugaElev()">Adaugă elev</button>
+  </div>
+
+  <div class="card">
+    <h3>Șterge elev</h3>
+    <input type="text" id="stergeInput" placeholder="Numele elevului">
+    <button onclick="stergeElev()">Șterge elev</button>
+  </div>
+
+  <div class="card">
+    <h3>Caută elev</h3>
+    <input type="text" id="cautaInput" placeholder="Numele elevului">
+    <button onclick="cautaElev()">Caută</button>
+    <p id="zonaCautare"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
